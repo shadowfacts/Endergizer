@@ -1,0 +1,16 @@
+[
+	{
+		"modid": "endergizer",
+		"name": "Endergizer",
+		"description": "Wireless Tesla batteries!",
+		"version": "${version}",
+		"mcversion": "${mcversion}",
+		"url": "http://github.com/shadowfacts/Endergizer",
+		"updateUrl": "",
+		"authorList": ["Shadowfacts"],
+		"credits": "",
+		"logoFile": "",
+		"screenshots": [],
+		"dependencies": []
+	}
+]

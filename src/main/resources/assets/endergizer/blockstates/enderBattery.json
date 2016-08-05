@@ -1,0 +1,211 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "endergizer:battery"
+	},
+	"variants": {
+		"inventory": [{}],
+		"inv": {
+			"true": {
+				"transform": "forge:default-block"
+			},
+			"false": {
+
+			}
+		},
+		"orientation": {
+			"down": {
+
+			},
+			"up": {
+				"transform": {
+					"rotation": [{"x": 180}, {"y": 0}, {"z": 0}]
+				}
+			},
+			"north": {
+				"transform": {
+					"rotation": [{"x": 270}, {"y": 0}, {"z": 0}]
+				}
+			},
+			"south": {
+				"transform": {
+					"rotation": [{"x": 90}, {"y": 0}, {"z": 0}]
+				}
+			},
+			"west": {
+				"transform": {
+					"rotation": [{"x": 0}, {"y": 0}, {"z": 90}]
+				}
+			},
+			"east": {
+				"transform": {
+					"rotation": [{"x": 0}, {"y": 0}, {"z": 270}]
+				}
+			}
+		},
+		"color1": {
+			"white": {
+				"textures": {
+					"color1": "blocks/wool_colored_white"
+				}
+			},
+			"orange": {
+				"textures": {
+					"color1": "blocks/wool_colored_orange"
+				}
+			},
+			"magenta": {
+				"textures": {
+					"color1": "blocks/wool_colored_magenta"
+				}
+			},
+			"light_blue": {
+				"textures": {
+					"color1": "blocks/wool_colored_light_blue"
+				}
+			},
+			"yellow": {
+				"textures": {
+					"color1": "blocks/wool_colored_yellow"
+				}
+			},
+			"lime": {
+				"textures": {
+					"color1": "blocks/wool_colored_lime"
+				}
+			},
+			"pink": {
+				"textures": {
+					"color1": "blocks/wool_colored_pink"
+				}
+			},
+			"gray": {
+				"textures": {
+					"color1": "blocks/wool_colored_gray"
+				}
+			},
+			"silver": {
+				"textures": {
+					"color1": "blocks/wool_colored_silver"
+				}
+			},
+			"cyan": {
+				"textures": {
+					"color1": "blocks/wool_colored_cyan"
+				}
+			},
+			"purple": {
+				"textures": {
+					"color1": "blocks/wool_colored_purple"
+				}
+			},
+			"blue": {
+				"textures": {
+					"color1": "blocks/wool_colored_blue"
+				}
+			},
+			"brown": {
+				"textures": {
+					"color1": "blocks/wool_colored_brown"
+				}
+			},
+			"green": {
+				"textures": {
+					"color1": "blocks/wool_colored_green"
+				}
+			},
+			"red": {
+				"textures": {
+					"color1": "blocks/wool_colored_red"
+				}
+			},
+			"black": {
+				"textures": {
+					"color1": "blocks/wool_colored_black"
+				}
+			}
+		},
+		"color2": {
+			"white": {
+				"textures": {
+					"color2": "blocks/wool_colored_white"
+				}
+			},
+			"orange": {
+				"textures": {
+					"color2": "blocks/wool_colored_orange"
+				}
+			},
+			"magenta": {
+				"textures": {
+					"color2": "blocks/wool_colored_magenta"
+				}
+			},
+			"light_blue": {
+				"textures": {
+					"color2": "blocks/wool_colored_light_blue"
+				}
+			},
+			"yellow": {
+				"textures": {
+					"color2": "blocks/wool_colored_yellow"
+				}
+			},
+			"lime": {
+				"textures": {
+					"color2": "blocks/wool_colored_lime"
+				}
+			},
+			"pink": {
+				"textures": {
+					"color2": "blocks/wool_colored_pink"
+				}
+			},
+			"gray": {
+				"textures": {
+					"color2": "blocks/wool_colored_gray"
+				}
+			},
+			"silver": {
+				"textures": {
+					"color2": "blocks/wool_colored_silver"
+				}
+			},
+			"cyan": {
+				"textures": {
+					"color2": "blocks/wool_colored_cyan"
+				}
+			},
+			"purple": {
+				"textures": {
+					"color2": "blocks/wool_colored_purple"
+				}
+			},
+			"blue": {
+				"textures": {
+					"color2": "blocks/wool_colored_blue"
+				}
+			},
+			"brown": {
+				"textures": {
+					"color2": "blocks/wool_colored_brown"
+				}
+			},
+			"green": {
+				"textures": {
+					"color2": "blocks/wool_colored_green"
+				}
+			},
+			"red": {
+				"textures": {
+					"color2": "blocks/wool_colored_red"
+				}
+			},
+			"black": {
+				"textures": {
+					"color2": "blocks/wool_colored_black"
+				}
+			}
+		}
+	}
+}

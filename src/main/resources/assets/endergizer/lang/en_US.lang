@@ -1,0 +1,7 @@
+item.voltageMeter.name=Voltage Meter
+item.voltageMeter.msg=Telsa Stored: §e%d/%d T
+
+tile.enderBattery.name=Ender Battery
+enderBattery.owner=Owner: %s
+
+endergizer.color=Color: %s / %s
