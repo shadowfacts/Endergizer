@@ -10,7 +10,7 @@ object ModItems : ModItems() {
 	var voltageMeter: ItemVoltageMeter? = null
 
 	override fun init() {
-		voltageMeter = register(ItemVoltageMeter())
+		voltageMeter = register(ItemVoltageMeter().init())
 	}
 
 }

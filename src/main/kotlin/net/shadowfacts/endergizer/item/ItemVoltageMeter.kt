@@ -3,6 +3,7 @@ package net.shadowfacts.endergizer.item
 import net.darkhax.tesla.api.ITeslaHolder
 import net.darkhax.tesla.capability.TeslaCapabilities
 import net.minecraft.client.resources.I18n
+import net.minecraft.creativetab.CreativeTabs
 import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.item.ItemStack
 import net.minecraft.util.EnumActionResult
@@ -20,6 +21,11 @@ import net.shadowfacts.shadowmc.item.ItemBase
 class ItemVoltageMeter : ItemBase("voltageMeter") {
 
 	val MSG_ID = 78454
+
+	fun init(): ItemVoltageMeter {
+		creativeTab = CreativeTabs.MISC
+		return this
+	}
 
 	override fun onItemUseFirst(stack: ItemStack, player: EntityPlayer, world: World, pos: BlockPos, facing: EnumFacing, hitX: Float, hitY: Float, hitZ: Float, hand: EnumHand?): EnumActionResult {
 		val te = world.getTileEntity(pos)

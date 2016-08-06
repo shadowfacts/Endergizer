@@ -52,6 +52,7 @@ class BlockEnderBattery : BlockTE<TileEntityEnderBattery>(Material.ROCK, "enderB
 				.withProperty(COLOR1, EnumDyeColor.WHITE)
 				.withProperty(COLOR2, EnumDyeColor.WHITE)
 		blockHardness = 0.3f
+		setCreativeTab(CreativeTabs.MISC)
 		return this
 	}
 
