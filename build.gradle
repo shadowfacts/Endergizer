@@ -71,10 +71,21 @@ dependencies {
 	deobfCompile group: "net.darkhax.tesla", name: "Tesla", version: mc_version + "-" + tesla_version
 }
 
+jar {
+	manifest {
+		attributes "FMLCorePlugin": "net.shadowfacts.forgelin.ForgelinCorePlugin"
+		attributes "FMLCorePluginContainsFMLMod": "true"
+	}
+}
+
 shadowJar {
 	classifier = ""
 	dependencies {
 		include(dependency("org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"))
+	}
+	manifest {
+		attributes "FMLCorePlugin": "net.shadowfacts.forgelin.ForgelinCorePlugin"
+		attributes "FMLCorePluginContainsFMLMod": "true"
 	}
 }
 

@@ -16,7 +16,7 @@ import net.shadowfacts.endergizer.util.CommandEndergizer
 /**
  * @author shadowfacts
  */
-@Mod(modid = MODID, name = NAME, version = VERSION, dependencies = DEPENDENCIES, modLanguageAdapter = "io.drakon.forge.kotlin.KotlinAdapter")
+@Mod(modid = MODID, name = NAME, version = VERSION, dependencies = DEPENDENCIES, modLanguageAdapter = "net.shadowfacts.forgelin.KotlinAdapter")
 object Endergizer {
 
 //	Content
