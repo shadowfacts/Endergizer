@@ -17,6 +17,8 @@ import java.util.*
  */
 class TileEntityEnderBattery : BaseTileEntity() {
 
+	val DEFAULT: UUID = UUID.fromString("41C82C87-7AfB-4024-BA57-13D2C99CAE77")
+
 	var tesla: BaseTeslaContainer = EnderTeslaContainer(this)
 
 	var color1 = EnumDyeColor.WHITE
@@ -29,7 +31,7 @@ class TileEntityEnderBattery : BaseTileEntity() {
 
 		tag.setInteger("color1", color1.ordinal)
 		tag.setInteger("color2", color2.ordinal)
-		tag.setUniqueId("owner", owner)
+		if (owner != null) tag.setUniqueId("owner", owner)
 
 		return tag
 	}
@@ -40,7 +42,7 @@ class TileEntityEnderBattery : BaseTileEntity() {
 		color1 = EnumDyeColor.byMetadata(tag.getInteger("color1"))
 		color2 = EnumDyeColor.byMetadata(tag.getInteger("color2"))
 
-		owner = tag.getUniqueId("owner")
+		owner = if (tag.hasUniqueId("owner")) tag.getUniqueId("owner") else DEFAULT
 
 		tesla = EnderTeslaContainer(this)
 	}
