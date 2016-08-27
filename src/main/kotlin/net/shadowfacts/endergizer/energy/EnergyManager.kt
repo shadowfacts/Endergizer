@@ -4,7 +4,7 @@ import net.minecraft.item.EnumDyeColor
 import net.minecraft.nbt.NBTTagCompound
 import net.minecraft.nbt.NBTTagList
 import net.minecraftforge.common.util.Constants
-import net.shadowfacts.endergizer.util.forEach
+import net.shadowfacts.forgelin.extensions.forEach
 import java.util.*
 
 /**

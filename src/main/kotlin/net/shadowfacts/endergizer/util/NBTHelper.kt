@@ -54,9 +54,3 @@ fun ItemStack.setColors(color: EnumDyeColor) {
 		tagCompound!!.setInteger("color2", color.metadata)
 	}
 }
-
-fun NBTTagList.forEach(action: (NBTBase) -> Unit) {
-	for (i in 0.until(tagCount())) {
-		action(get(i))
-	}
-}
