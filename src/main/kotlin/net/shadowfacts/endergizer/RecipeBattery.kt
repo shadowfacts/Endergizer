@@ -38,7 +38,7 @@ object RecipeBattery : IRecipe {
 		return result
 	}
 
-	override fun matches(inv: InventoryCrafting, world: World): Boolean {
+	override fun matches(inv: InventoryCrafting, world: World?): Boolean {
 		for (y in 0..2) {
 			val stack = inv.getStackInRowAndColumn(0, y)
 			if (stack == null || stack.item != Item.getItemFromBlock(Blocks.WOOL)) {
