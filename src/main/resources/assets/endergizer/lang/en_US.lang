@@ -1,5 +1,5 @@
 item.voltageMeter.name=Voltage Meter
-item.voltageMeter.msg=Telsa Stored: §e%d/%d T
+item.voltageMeter.msg=Energy Stored: §e%d/%d§f %s
 
 tile.enderBattery.name=Ender Battery
 enderBattery.owner=Owner: %s
