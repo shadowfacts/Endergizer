@@ -6,7 +6,9 @@ import net.minecraft.item.EnumDyeColor
 import net.minecraft.nbt.NBTTagCompound
 import net.minecraft.util.EnumFacing
 import net.minecraftforge.common.capabilities.Capability
+import net.minecraftforge.energy.CapabilityEnergy
 import net.shadowfacts.endergizer.energy.EnderTeslaContainer
+import net.shadowfacts.endergizer.energy.FUAdapter
 import net.shadowfacts.shadowmc.ShadowMC
 import net.shadowfacts.shadowmc.network.PacketRequestTEUpdate
 import net.shadowfacts.shadowmc.tileentity.BaseTileEntity
@@ -20,6 +22,7 @@ class TileEntityEnderBattery : BaseTileEntity() {
 	val DEFAULT: UUID = UUID.fromString("41C82C87-7AfB-4024-BA57-13D2C99CAE77")
 
 	var tesla: BaseTeslaContainer = EnderTeslaContainer(this)
+	val forgeEnergy= FUAdapter(tesla)
 
 	var color1 = EnumDyeColor.WHITE
 	var color2 = EnumDyeColor.WHITE
@@ -54,18 +57,24 @@ class TileEntityEnderBattery : BaseTileEntity() {
 	}
 
 	override fun hasCapability(capability: Capability<*>?, facing: EnumFacing?): Boolean {
-		if (capability == TeslaCapabilities.CAPABILITY_HOLDER || capability == TeslaCapabilities.CAPABILITY_CONSUMER || capability == TeslaCapabilities.CAPABILITY_PRODUCER) {
-			val orientation = world.getBlockState(pos).getValue(ORIENTATION)
-			return facing == null || facing == orientation || facing == orientation.opposite
+		val orientation = world.getBlockState(pos).getValue(ORIENTATION)
+		if (facing == null || facing == orientation || facing == orientation.opposite) {
+			if (capability == TeslaCapabilities.CAPABILITY_HOLDER || capability == TeslaCapabilities.CAPABILITY_CONSUMER || capability == TeslaCapabilities.CAPABILITY_PRODUCER) {
+				return true
+			} else if (capability == CapabilityEnergy.ENERGY) {
+				return true
+			}
 		}
 		return super.hasCapability(capability, facing)
 	}
 
 	override fun <T : Any?> getCapability(capability: Capability<T>?, facing: EnumFacing?): T {
-		if (capability == TeslaCapabilities.CAPABILITY_HOLDER || capability == TeslaCapabilities.CAPABILITY_CONSUMER || capability == TeslaCapabilities.CAPABILITY_PRODUCER) {
-			val orientation = world.getBlockState(pos).getValue(ORIENTATION)
-			if (facing == null || facing == orientation || facing == orientation.opposite) {
+		val orientation = world.getBlockState(pos).getValue(ORIENTATION)
+		if (facing == null || facing == orientation || facing == orientation.opposite) {
+			if (capability == TeslaCapabilities.CAPABILITY_HOLDER || capability == TeslaCapabilities.CAPABILITY_CONSUMER || capability == TeslaCapabilities.CAPABILITY_PRODUCER) {
 				return tesla as T
+			} else if (capability == CapabilityEnergy.ENERGY) {
+				return forgeEnergy as T
 			}
 		}
 		return super.getCapability(capability, facing)
