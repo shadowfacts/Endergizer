@@ -10,9 +10,7 @@ import net.shadowfacts.endergizer.RecipeBattery
  */
 object ERecipeHandler : IRecipeHandler<RecipeBattery> {
 
-	override fun getRecipeCategoryUid(): String = VanillaRecipeCategoryUid.CRAFTING
-
-	override fun getRecipeCategoryUid(recipe: RecipeBattery): String = recipeCategoryUid
+	override fun getRecipeCategoryUid(recipe: RecipeBattery): String = VanillaRecipeCategoryUid.CRAFTING
 
 	override fun isRecipeValid(recipe: RecipeBattery): Boolean = true
 

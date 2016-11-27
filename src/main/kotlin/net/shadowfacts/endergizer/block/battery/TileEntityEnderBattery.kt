@@ -56,8 +56,8 @@ class TileEntityEnderBattery : BaseTileEntity() {
 		}
 	}
 
-	override fun hasCapability(capability: Capability<*>?, facing: EnumFacing?): Boolean {
-		val orientation = world.getBlockState(pos).getValue(ORIENTATION)
+	override fun hasCapability(capability: Capability<*>, facing: EnumFacing?): Boolean {
+		val orientation = world.getBlockState(pos).getValue(BlockEnderBattery.ORIENTATION)
 		if (facing == null || facing == orientation || facing == orientation.opposite) {
 			if (capability == TeslaCapabilities.CAPABILITY_HOLDER || capability == TeslaCapabilities.CAPABILITY_CONSUMER || capability == TeslaCapabilities.CAPABILITY_PRODUCER) {
 				return true
@@ -68,8 +68,8 @@ class TileEntityEnderBattery : BaseTileEntity() {
 		return super.hasCapability(capability, facing)
 	}
 
-	override fun <T : Any?> getCapability(capability: Capability<T>?, facing: EnumFacing?): T {
-		val orientation = world.getBlockState(pos).getValue(ORIENTATION)
+	override fun <T : Any?> getCapability(capability: Capability<T>, facing: EnumFacing?): T? {
+		val orientation = world.getBlockState(pos).getValue(BlockEnderBattery.ORIENTATION)
 		if (facing == null || facing == orientation || facing == orientation.opposite) {
 			if (capability == TeslaCapabilities.CAPABILITY_HOLDER || capability == TeslaCapabilities.CAPABILITY_CONSUMER || capability == TeslaCapabilities.CAPABILITY_PRODUCER) {
 				return tesla as T

@@ -1,7 +1,7 @@
-item.voltageMeter.name=Voltage Meter
-item.voltageMeter.msg=Energy Stored: §e%d/%d§f %s
+item.voltage_meter.name=Voltage Meter
+item.voltage_meter.msg=Energy Stored: §e%d/%d§f %s
 
-tile.enderBattery.name=Ender Battery
-enderBattery.owner=Owner: %s
+tile.ender_battery.name=Ender Battery
+ender_battery.owner=Owner: %s
 
 endergizer.color=Color: %s / %s

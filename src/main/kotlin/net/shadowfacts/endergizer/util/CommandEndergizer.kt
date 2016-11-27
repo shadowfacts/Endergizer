@@ -13,20 +13,20 @@ import net.shadowfacts.endergizer.energy.EnergyManager
  */
 object CommandEndergizer : CommandBase() {
 
-	override fun getCommandName(): String {
+	override fun getName(): String {
 		return "endergizer"
 	}
 
-	override fun getCommandUsage(sender: ICommandSender?): String {
+	override fun getUsage(sender: ICommandSender?): String {
 		return "/endergizer [cmd]"
 	}
 
 	override fun execute(server: MinecraftServer, sender: ICommandSender, args: Array<out String>) {
-		if (args.size == 0) throw WrongUsageException(getCommandUsage(sender))
+		if (args.size == 0) throw WrongUsageException(getUsage(sender))
 		when (args[0].toLowerCase()) {
 			"reset" -> {
 				EnergyManager.reset()
-				sender.addChatMessage(TextComponentString("Reset energy"))
+				sender.sendMessage(TextComponentString("Reset energy"))
 			}
 			else -> throw CommandException("Unknown subcommand ${args[0]}")
 		}

@@ -7,6 +7,7 @@ import net.minecraft.item.EnumDyeColor
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
 import net.minecraft.item.crafting.IRecipe
+import net.minecraft.util.NonNullList
 import net.minecraft.world.World
 import net.shadowfacts.endergizer.util.setColors
 
@@ -15,8 +16,8 @@ import net.shadowfacts.endergizer.util.setColors
  */
 object RecipeBattery : IRecipe {
 
-	override fun getRemainingItems(inv: InventoryCrafting): Array<ItemStack?> {
-		return kotlin.arrayOfNulls(inv.sizeInventory)
+	override fun getRemainingItems(inv: InventoryCrafting): NonNullList<ItemStack> {
+		return NonNullList.withSize(inv.sizeInventory, ItemStack.EMPTY)
 	}
 
 	override fun getRecipeOutput(): ItemStack = ItemStack(Endergizer.blocks.enderBattery)

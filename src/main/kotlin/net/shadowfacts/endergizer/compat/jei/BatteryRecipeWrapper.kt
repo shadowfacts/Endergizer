@@ -29,9 +29,4 @@ class BatteryRecipeWrapper(val recipe: RecipeBattery) : BlankRecipeWrapper(), IC
 		ingredients.setOutput(ItemStack::class.java, stack)
 	}
 
-	@Deprecated("getOutputs is deprecated")
-	override fun getOutputs(): MutableList<ItemStack>? {
-		return mutableListOf()
-	}
-
 }

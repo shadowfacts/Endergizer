@@ -20,7 +20,7 @@ import net.shadowfacts.shadowmc.item.ItemBase
 /**
  * @author shadowfacts
  */
-class ItemVoltageMeter : ItemBase("voltageMeter") {
+class ItemVoltageMeter : ItemBase("voltage_meter") {
 
 	val MSG_ID = 78454
 
@@ -29,19 +29,19 @@ class ItemVoltageMeter : ItemBase("voltageMeter") {
 		return this
 	}
 
-	override fun onItemUseFirst(stack: ItemStack, player: EntityPlayer, world: World, pos: BlockPos, facing: EnumFacing, hitX: Float, hitY: Float, hitZ: Float, hand: EnumHand?): EnumActionResult {
+	override fun onItemUseFirst(player: EntityPlayer, world: World, pos: BlockPos, facing: EnumFacing, hitX: Float, hitY: Float, hitZ: Float, hand: EnumHand?): EnumActionResult {
 		val te = world.getTileEntity(pos)
 		if (te != null) {
 			val tesla: ITeslaHolder? = if (te.hasCapability(TeslaCapabilities.CAPABILITY_HOLDER, facing)) te.getCapability(TeslaCapabilities.CAPABILITY_HOLDER, facing) else if (te.hasCapability(TeslaCapabilities.CAPABILITY_HOLDER, null)) te.getCapability(TeslaCapabilities.CAPABILITY_HOLDER, null) else null
 			if (tesla != null) {
-				val msg = TextComponentString(I18n.format("item.voltageMeter.msg", tesla.storedPower, tesla.capacity, "Tesla"))
+				val msg = TextComponentString(I18n.format("item.voltage_meter.msg", tesla.storedPower, tesla.capacity, "Tesla"))
 				ShadowMC.proxy.sendSpamlessMessage(player, msg, MSG_ID)
 				return EnumActionResult.SUCCESS
 			}
 
 			val fu: IEnergyStorage? = if (te.hasCapability(CapabilityEnergy.ENERGY, facing)) te.getCapability(CapabilityEnergy.ENERGY, facing) else if (te.hasCapability(CapabilityEnergy.ENERGY, null)) te.getCapability(CapabilityEnergy.ENERGY, null) else null
 			if (fu != null) {
-				val msg = TextComponentString(I18n.format("item.voltageMeter.msg", fu.energyStored, fu.maxEnergyStored, ""))
+				val msg = TextComponentString(I18n.format("item.voltage_meter.msg", fu.energyStored, fu.maxEnergyStored, ""))
 				ShadowMC.proxy.sendSpamlessMessage(player, msg, MSG_ID)
 				return EnumActionResult.SUCCESS
 			}
