@@ -2,15 +2,18 @@ package net.shadowfacts.endergizer.compat.jei
 
 import mezz.jei.api.*
 import mezz.jei.api.JEIPlugin
+import mezz.jei.api.recipe.IRecipeWrapperFactory
+import mezz.jei.api.recipe.VanillaRecipeCategoryUid
+import net.shadowfacts.endergizer.RecipeBattery
 
 /**
  * @author shadowfacts
  */
 @JEIPlugin
-class JEIPlugin : BlankModPlugin() {
+class JEIPlugin: IModPlugin {
 
 	override fun register(registry: IModRegistry) {
-		registry.addRecipeHandlers(ERecipeHandler)
+		registry.handleRecipes(RecipeBattery::class.java, IRecipeWrapperFactory(::BatteryRecipeWrapper), VanillaRecipeCategoryUid.CRAFTING)
 	}
 
 }

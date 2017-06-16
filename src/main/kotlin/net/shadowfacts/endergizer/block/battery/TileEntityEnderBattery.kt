@@ -17,7 +17,7 @@ import java.util.*
 /**
  * @author shadowfacts
  */
-class TileEntityEnderBattery : BaseTileEntity() {
+class TileEntityEnderBattery: BaseTileEntity() {
 
 	val DEFAULT: UUID = UUID.fromString("41C82C87-7AfB-4024-BA57-13D2C99CAE77")
 

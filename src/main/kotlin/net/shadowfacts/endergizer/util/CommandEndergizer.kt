@@ -11,7 +11,7 @@ import net.shadowfacts.endergizer.energy.EnergyManager
 /**
  * @author shadowfacts
  */
-object CommandEndergizer : CommandBase() {
+object CommandEndergizer: CommandBase() {
 
 	override fun getName(): String {
 		return "endergizer"

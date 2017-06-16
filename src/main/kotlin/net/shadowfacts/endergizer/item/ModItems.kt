@@ -5,7 +5,7 @@ import net.shadowfacts.shadowmc.item.ModItems
 /**
  * @author shadowfacts
  */
-object ModItems : ModItems() {
+object ModItems: ModItems() {
 
 	var voltageMeter: ItemVoltageMeter? = null
 

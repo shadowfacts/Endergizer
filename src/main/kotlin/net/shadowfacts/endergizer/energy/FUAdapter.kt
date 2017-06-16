@@ -6,7 +6,7 @@ import net.minecraftforge.energy.IEnergyStorage
 /**
  * @author shadowfacts
  */
-class FUAdapter(val tesla: BaseTeslaContainer) : IEnergyStorage {
+class FUAdapter(val tesla: BaseTeslaContainer): IEnergyStorage {
 
 	override fun canExtract(): Boolean {
 		return tesla.outputRate > 0

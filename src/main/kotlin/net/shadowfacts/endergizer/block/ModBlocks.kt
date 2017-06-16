@@ -6,7 +6,7 @@ import net.shadowfacts.shadowmc.block.ModBlocks
 /**
  * @author shadowfacts
  */
-object ModBlocks : ModBlocks() {
+object ModBlocks: ModBlocks() {
 
 	var enderBattery: BlockEnderBattery? = null
 

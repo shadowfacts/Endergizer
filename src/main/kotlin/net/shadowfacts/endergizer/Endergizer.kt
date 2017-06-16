@@ -1,14 +1,11 @@
 package net.shadowfacts.endergizer
 
-import net.minecraft.init.Items
 import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.event.FMLInitializationEvent
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent
 import net.minecraftforge.fml.common.registry.GameRegistry
-import net.minecraftforge.oredict.RecipeSorter
-import net.minecraftforge.oredict.ShapedOreRecipe
 import net.shadowfacts.endergizer.block.ModBlocks
 import net.shadowfacts.endergizer.item.ModItems
 import net.shadowfacts.endergizer.util.CommandEndergizer
@@ -35,9 +32,7 @@ object Endergizer {
 
 	@Mod.EventHandler
 	fun init(event: FMLInitializationEvent) {
-		GameRegistry.addRecipe(RecipeBattery)
-		RecipeSorter.register(MODID + ".battery", RecipeBattery::class.java, RecipeSorter.Category.SHAPED, "")
-		GameRegistry.addRecipe(ShapedOreRecipe(items.voltageMeter, " I ", "ICI", "IRI", 'I', "ingotIron", 'C', Items.CLOCK, 'R', "dustRedstone"))
+		GameRegistry.register(RecipeBattery)
 	}
 
 	@Mod.EventHandler

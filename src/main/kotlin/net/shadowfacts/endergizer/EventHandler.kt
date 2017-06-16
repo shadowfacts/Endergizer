@@ -25,7 +25,7 @@ object EventHandler {
 	fun onWorldLoad(event: WorldEvent.Load) {
 		val file = File(DimensionManager.getCurrentSaveRootDirectory(), "$NAME.nbt")
 		if (file.exists()) {
-			val tag = CompressedStreamTools.read(file)
+			val tag = CompressedStreamTools.read(file)!!
 			EnergyManager.readFromNBT(tag)
 		}
 	}

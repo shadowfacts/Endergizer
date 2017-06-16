@@ -8,7 +8,7 @@ import net.shadowfacts.endergizer.block.battery.TileEntityEnderBattery
 /**
  * @author shadowfacts
  */
-class EnderTeslaContainer(val te: TileEntityEnderBattery) : BaseTeslaContainer(EConfig.capacity, EConfig.transferRate, EConfig.transferRate) {
+class EnderTeslaContainer(val te: TileEntityEnderBattery): BaseTeslaContainer(EConfig.capacity, EConfig.transferRate, EConfig.transferRate) {
 
 	override fun getStoredPower(): Long {
 		return EnergyManager.getEnergy(te.owner!!, te.color1, te.color2)

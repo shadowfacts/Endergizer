@@ -8,6 +8,7 @@ import net.minecraft.block.state.BlockStateContainer
 import net.minecraft.block.state.IBlockState
 import net.minecraft.client.renderer.block.model.ModelResourceLocation
 import net.minecraft.client.resources.I18n
+import net.minecraft.client.util.ITooltipFlag
 import net.minecraft.creativetab.CreativeTabs
 import net.minecraft.entity.EntityLivingBase
 import net.minecraft.entity.item.EntityItem
@@ -35,7 +36,7 @@ import net.shadowfacts.shadowmc.block.BlockTE
 /**
  * @author shadowfacts
  */
-class BlockEnderBattery : BlockTE<TileEntityEnderBattery>(Material.ROCK, "ender_battery") {
+class BlockEnderBattery: BlockTE<TileEntityEnderBattery>(Material.ROCK, "ender_battery") {
 
 	companion object {
 		val INV: PropertyBool = PropertyBool.create("inv")
@@ -67,11 +68,13 @@ class BlockEnderBattery : BlockTE<TileEntityEnderBattery>(Material.ROCK, "ender_
 		})
 	}
 
-	override fun getSubBlocks(item: Item, tab: CreativeTabs?, list: NonNullList<ItemStack>) {
-		EnumDyeColor.values().forEach {
-			val stack = ItemStack(this)
-			stack.setColors(it)
-			list.add(stack)
+	override fun getSubBlocks(tab: CreativeTabs, items: NonNullList<ItemStack>) {
+		if (tab == creativeTabToDisplayOn) {
+			EnumDyeColor.values().forEach {
+				val stack = ItemStack(this)
+				stack.setColors(it)
+				items.add(stack)
+			}
 		}
 	}
 
@@ -83,7 +86,7 @@ class BlockEnderBattery : BlockTE<TileEntityEnderBattery>(Material.ROCK, "ender_
 		return stack
 	}
 
-	override fun addInformation(stack: ItemStack, player: EntityPlayer, tooltip: MutableList<String>, advanced: Boolean) {
+	override fun addInformation(stack: ItemStack, world: World?, tooltip: MutableList<String>, flag: ITooltipFlag) {
 		val color1 = stack.getColor1()
 		val color2 = stack.getColor2()
 		if (color1 != null && color2 != null) {

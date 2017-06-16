@@ -6,23 +6,25 @@ import net.minecraft.inventory.InventoryCrafting
 import net.minecraft.item.EnumDyeColor
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
-import net.minecraft.item.crafting.IRecipe
 import net.minecraft.util.NonNullList
 import net.minecraft.world.World
 import net.shadowfacts.endergizer.util.setColors
+import net.shadowfacts.shadowmc.recipe.RecipeBase
 
 /**
  * @author shadowfacts
  */
-object RecipeBattery : IRecipe {
+object RecipeBattery: RecipeBase() {
 
-	override fun getRemainingItems(inv: InventoryCrafting): NonNullList<ItemStack> {
-		return NonNullList.withSize(inv.sizeInventory, ItemStack.EMPTY)
+	init {
+		setRegistryName("battery")
 	}
 
-	override fun getRecipeOutput(): ItemStack = ItemStack(Endergizer.blocks.enderBattery)
+	override fun getRemainingItems(inv: InventoryCrafting) = NonNullList.withSize(inv.sizeInventory, ItemStack.EMPTY)
 
-	override fun getRecipeSize(): Int = 9
+	override fun getRecipeOutput() = ItemStack(Endergizer.blocks.enderBattery)
+
+	override fun canFit(width: Int, height: Int) = width >= 3 && height >= 3
 
 	override fun getCraftingResult(inv: InventoryCrafting): ItemStack {
 		val colors = IntArray(16)
