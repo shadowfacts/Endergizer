@@ -25,9 +25,8 @@ class ItemVoltageMeter: ItemBase("voltage_meter") {
 
 	val MSG_ID = 78454
 
-	fun init(): ItemVoltageMeter {
+	init {
 		creativeTab = CreativeTabs.MISC
-		return this
 	}
 
 	override fun onItemUseFirst(player: EntityPlayer, world: World, pos: BlockPos, facing: EnumFacing, hitX: Float, hitY: Float, hitZ: Float, hand: EnumHand?): EnumActionResult {

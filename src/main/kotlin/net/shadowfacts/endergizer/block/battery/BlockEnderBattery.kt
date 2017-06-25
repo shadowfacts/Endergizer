@@ -49,7 +49,7 @@ class BlockEnderBattery: BlockTE<TileEntityEnderBattery>(Material.ROCK, "ender_b
 		val EW_BOX = AxisAlignedBB(0.0, 4/16.0, 4/16.0, 1.0, 12/16.0, 12/16.0)
 	}
 
-	fun init(): BlockEnderBattery {
+	init {
 		defaultState = defaultState
 				.withProperty(INV, false)
 				.withProperty(ORIENTATION, EnumFacing.DOWN)
@@ -57,7 +57,6 @@ class BlockEnderBattery: BlockTE<TileEntityEnderBattery>(Material.ROCK, "ender_b
 				.withProperty(COLOR2, EnumDyeColor.WHITE)
 		blockHardness = 0.3f
 		setCreativeTab(CreativeTabs.MISC)
-		return this
 	}
 
 	override fun initItemModel() {

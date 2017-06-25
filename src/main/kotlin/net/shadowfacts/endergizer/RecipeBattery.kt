@@ -1,24 +1,24 @@
 package net.shadowfacts.endergizer
 
+import com.google.gson.JsonObject
 import net.minecraft.init.Blocks
 import net.minecraft.init.Items
 import net.minecraft.inventory.InventoryCrafting
 import net.minecraft.item.EnumDyeColor
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
+import net.minecraft.item.crafting.IRecipe
 import net.minecraft.util.NonNullList
 import net.minecraft.world.World
+import net.minecraftforge.common.crafting.IRecipeFactory
+import net.minecraftforge.common.crafting.JsonContext
 import net.shadowfacts.endergizer.util.setColors
 import net.shadowfacts.shadowmc.recipe.RecipeBase
 
 /**
  * @author shadowfacts
  */
-object RecipeBattery: RecipeBase() {
-
-	init {
-		setRegistryName("battery")
-	}
+class RecipeBattery: RecipeBase() {
 
 	override fun getRemainingItems(inv: InventoryCrafting) = NonNullList.withSize(inv.sizeInventory, ItemStack.EMPTY)
 
@@ -63,6 +63,12 @@ object RecipeBattery: RecipeBase() {
 		if (stack == null || stack.item != Items.ENDER_PEARL) return false
 
 		return true
+	}
+
+	class Factory: IRecipeFactory {
+
+		override fun parse(context: JsonContext, json: JsonObject) = RecipeBattery()
+
 	}
 
 }
